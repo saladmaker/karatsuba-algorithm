@@ -16,4 +16,11 @@ public class KaratsubaTest {
         String message = exception.getMessage();
         assertEquals("Length inequality first: "+first.length+", seconde: "+seconde.length, message);
     }
+    @Test
+    void testZeroLengthNumber(){
+        int[] emptyNubmer={};
+        Exception exception = assertThrows(NumberFormatException.class, ()->Karatsuba.multiply(emptyNubmer, emptyNubmer));
+        String message = exception.getMessage();
+        assertEquals("empty number!", message);
+    }
 }
