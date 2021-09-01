@@ -1,0 +1,32 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+
+# Maven
+target/
+.m2/
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+
+# IntelliJ Idea
+.idea/
+*.iws
+*.ipr
+*.iml
+*.releaseBackup
+atlassian-ide-plugin.xml
+
+# Netbeans
+nbactions.xml
+nb-configuration.xml
+
+# Eclipse and vscode
+.settings
+.settings/
+.project
+.classpath
