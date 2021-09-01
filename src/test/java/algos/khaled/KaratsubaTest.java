@@ -37,4 +37,18 @@ public class KaratsubaTest {
         message = exception.getMessage();
         assertEquals("numbers's length must 2^m where m is natural number 0,1,2,...etc.",message);
     }
+    @Test
+    void testNullArrayNumber(){
+        int[] firstNull = null;
+        int[] seconde ={1,2,5,4};
+        Exception exception = assertThrows(NumberFormatException.class, ()->Karatsuba.multiply(firstNull, seconde));
+        String message = exception.getMessage();
+        assertEquals("first number is null",message);
+        // applying matrix case checking
+        int[] first ={1,2,5,4};
+        int[] secondeNull = null;
+        exception = assertThrows(NumberFormatException.class, ()->Karatsuba.multiply(first, secondeNull));
+        message = exception.getMessage();
+        assertEquals("seconde number is null",message);
+    }
 }

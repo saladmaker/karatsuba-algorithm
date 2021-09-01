@@ -17,6 +17,8 @@ public class Karatsuba {
      * @return first times seconde by applying
      * <a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm">Karatsuba
      * Algorithm</a>
+     * @throws NumberFormatException if {@code first} is null and/or {@code seconde} 
+     * is null
      * @throws IllegalArgumentException if {@code first} and {@code seconde} have
      * inequal length
      * @throws NumberFormatException if {@code first}, {@code seconde} are empty
@@ -24,6 +26,12 @@ public class Karatsuba {
      * is not <i><em>power of two n= 2^m where m is a natural number</em></i>
      */
     public static int multiply(int[] first, int[] seconde) {
+        if(first == null){
+            throw new NumberFormatException("first number is null");
+        }
+        if(seconde == null ){
+            throw new NumberFormatException("seconde number is null");
+        }
         if (first.length != seconde.length) {
             throw new IllegalArgumentException("Length inequality first: " + first.length + ", seconde: " + seconde.length);
         }
