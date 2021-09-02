@@ -53,6 +53,6 @@ public class Karatsuba {
         if(checkPowerOfTwo!=0){
             throw new NumberFormatException("numbers's length must 2^m where m is natural number 0,1,2,...etc.");
         }
-        return 0;
+        return first[0]*seconde[0];
     }
 }

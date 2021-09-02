@@ -51,4 +51,21 @@ public class KaratsubaTest {
         message = exception.getMessage();
         assertEquals("seconde number is null",message);
     }
+    @Test
+    void testBaseCase(){
+        int[] first = {2};
+        int[] seconde ={6};
+        int expected = first[0]*seconde[0];
+        assertEquals(expected, Karatsuba.multiply(first, seconde));
+        
+        int[] firstZero = {0};
+        int[] secondeNonZero ={4};
+        expected = firstZero[0]*secondeNonZero[0];
+        assertEquals(expected, Karatsuba.multiply(firstZero, secondeNonZero));
+        
+        int[] firstNonZero = {3};
+        int[] secondeZero ={0};
+        expected = firstNonZero[0]*secondeZero[0];
+        assertEquals(expected, Karatsuba.multiply(firstNonZero, secondeZero));       
+    }
 }
