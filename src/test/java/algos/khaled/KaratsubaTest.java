@@ -90,4 +90,31 @@ public class KaratsubaTest {
         expected = 78*99;
         assertEquals(expected, Karatsuba.multiply(firstBig, secondeBig));
     }
+    @Test
+    void testBigNumber(){
+        int[] first ={2,4,5,6};
+        int[] seconde ={5,4,0,2};
+        int expected = 2456*5402;
+        assertEquals(expected, Karatsuba.multiply(first, seconde));
+        
+        int[] firstLeadingZero ={0,3,5,9};
+        int[] secondeContainsZero ={8,7,0,2};
+        expected = 359*8702;
+        assertEquals(expected, Karatsuba.multiply(firstLeadingZero, secondeContainsZero));
+        
+        int[] firstContainsZero ={2,3,5,0};
+        int[] secondeLeadingZero ={0,7,4,2};
+        expected = 2350*742;
+        assertEquals(expected, Karatsuba.multiply(firstContainsZero, secondeLeadingZero));
+        
+        int[] firstLeadingZeros ={0,0,0,8};
+        int[] secondeContainsZeros ={8,1,0,0};
+        expected = 8*8100;
+        assertEquals(expected, Karatsuba.multiply(firstLeadingZeros, secondeContainsZeros));
+        
+        int[] firstContainsZeros ={9,0,0,0};
+        int[] secondeLeadingZeros ={0,0,0,2};
+        expected = 9000*2;
+        assertEquals(expected, Karatsuba.multiply(firstContainsZeros, secondeLeadingZeros));        
+    }
 }
