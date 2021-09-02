@@ -1,5 +1,7 @@
 package algos.khaled;
 
+import java.util.Arrays;
+
 /**
  * @author khaled abderrahim
  */
@@ -53,6 +55,31 @@ public class Karatsuba {
         if(checkPowerOfTwo!=0){
             throw new NumberFormatException("numbers's length must 2^m where m is natural number 0,1,2,...etc.");
         }
-        return first[0]*seconde[0];
+        if(n == 1){
+            return first[0]*seconde[0];
+        }
+        int halfN = n/2;
+        int[] a = Arrays.copyOfRange(first,0,halfN);
+        int[] b = Arrays.copyOfRange(first, halfN, n);
+        int[] c = Arrays.copyOfRange(seconde, 0, halfN);
+        int[] d = Arrays.copyOfRange(seconde, halfN, n);
+        return (int)
+                (
+                 (
+                     Math.pow(10, n)
+                   * multiply(a, c)
+                  )
+                +(
+                   Math.pow(10, halfN)
+                   *( 
+                      multiply(a, d) 
+                     +
+                      multiply(b, c)
+                    )
+                 )
+                +  multiply(b, d)
+                );
+                
+                
     }
 }

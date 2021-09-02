@@ -68,4 +68,26 @@ public class KaratsubaTest {
         expected = firstNonZero[0]*secondeZero[0];
         assertEquals(expected, Karatsuba.multiply(firstNonZero, secondeZero));       
     }
+    @Test
+    void testOneLevelRecursive(){
+        int[] first ={1,5};
+        int[] seconde ={2,6};
+        int expected= 15*26;
+        assertEquals(expected, Karatsuba.multiply(first, seconde));
+
+        int[] firstZero ={0,0};
+        int[] secondeNonZero ={5,8};
+        expected=0;
+        assertEquals(expected, Karatsuba.multiply(firstZero, secondeNonZero));
+        
+        int[] firstNonZero = {7,8};
+        int[] secondeZero ={0,0};
+        expected = 78*0;
+        assertEquals(expected, Karatsuba.multiply(firstNonZero, secondeZero));
+        
+        int[] firstBig = {7,8};
+        int[] secondeBig ={9,9};
+        expected = 78*99;
+        assertEquals(expected, Karatsuba.multiply(firstBig, secondeBig));
+    }
 }
